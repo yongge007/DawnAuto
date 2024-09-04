@@ -79,9 +79,11 @@ def RemixCaptacha(base64_image):
     ocr.set_ranges(0)
     result = ocr.classification(new_image)
     logger.debug(f'[1] 验证码识别结果：{result}，是否为可计算验证码 {IsValidExpression(result)}',)
-    if IsValidExpression(result) == True:
-        #rc = eval(result)
-        return result
+
+    return result
+    # if IsValidExpression(result) == True:
+    #     #rc = eval(result)
+    #     return result
 
 
 def login(USERNAME,PASSWORD):
